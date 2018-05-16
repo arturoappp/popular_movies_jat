@@ -1,4 +1,4 @@
-package com.jatapp.popular_movies_stage1_udacity;
+package com.jatapp.popular_movies_stage1_udacity.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.jatapp.popular_movies_stage1_udacity.R;
 import com.jatapp.popular_movies_stage1_udacity.model.Movie;
 import com.jatapp.popular_movies_stage1_udacity.utilities.NetworkUtils;
 import com.squareup.picasso.Picasso;
@@ -42,7 +43,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieAdapter
         Movie movie = mMovieData.get(position);
         URL url = NetworkUtils.buildUrlImage(movie.getPoster());
         String img_path = url.toString();
-        Picasso.with(mContext).load(img_path).into(holder.img_poster);
+        Picasso.with(mContext).load(img_path).placeholder(R.drawable.ic_video_black_24dp).into(holder.img_poster);
     }
 
     @Override

@@ -10,4 +10,33 @@
 
     </style>
 
+    <style name="DetailLabel"  parent="@style/TextAppearance.AppCompat.Body1" >
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:layout_marginRight">8dp</item>
+
+    </style>
+
+    <style name="DetailLabelFavorite"  parent="DetailLabel" >
+        <item name="android:layout_width">0dp</item>
+        <item name="android:background">@drawable/round_my_tv_</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Detailtv"  >
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginTop">2dp</item>
+
+    </style>
+
 </resources>

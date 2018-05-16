@@ -40,6 +40,11 @@
                 android:value=".MainActivity" />
         </activity>
 
+        <provider
+            android:name=".data.FavoriteMovieProvider"
+            android:authorities="@string/content_authority"
+            android:exported="false"/>
+
     </application>
 
 </manifest>

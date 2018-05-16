@@ -8,11 +8,12 @@ public class Movie implements Parcelable {
     private String title;
     private String original_title;
     private String poster;
+    private byte[] poster_offline;
     private String overview;
     private String vote_average;
     private String release_date;
 
-    public Movie(String id, String title, String original_title, String poster, String overview, String vote_average, String release_date) {
+    public Movie(String id, String title, String original_title, String poster,  String overview, String vote_average, String release_date) {
         this.id = id;
         this.title = title;
         this.original_title = original_title;
@@ -22,6 +23,24 @@ public class Movie implements Parcelable {
         this.release_date = release_date;
     }
 
+    public Movie(String id, String title, String original_title, String poster, byte[] poster_offline, String overview, String vote_average, String release_date) {
+        this.id = id;
+        this.title = title;
+        this.original_title = original_title;
+        this.poster = poster;
+        this.poster_offline = poster_offline;
+        this.overview = overview;
+        this.vote_average = vote_average;
+        this.release_date = release_date;
+    }
+
+    public byte[] getPoster_offline() {
+        return poster_offline;
+    }
+
+    public void setPoster_offline(byte[] poster_offline) {
+        this.poster_offline = poster_offline;
+    }
 
     public String getId() {
         return id;
@@ -91,6 +110,7 @@ public class Movie implements Parcelable {
         dest.writeString(this.title);
         dest.writeString(this.original_title);
         dest.writeString(this.poster);
+        dest.writeByteArray(this.poster_offline);
         dest.writeString(this.overview);
         dest.writeString(this.vote_average);
         dest.writeString(this.release_date);
@@ -101,6 +121,7 @@ public class Movie implements Parcelable {
         this.title = in.readString();
         this.original_title = in.readString();
         this.poster = in.readString();
+        this.poster_offline = in.createByteArray();
         this.overview = in.readString();
         this.vote_average = in.readString();
         this.release_date = in.readString();

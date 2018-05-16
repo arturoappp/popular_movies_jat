@@ -17,68 +17,62 @@
             android:layout_width="200dp"
             android:layout_height="300dp"
             android:adjustViewBounds="true"
-            android:src="@drawable/ic_launcher_background"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:contentDescription="@string/movie_poster" />
 
         <TextView
             android:id="@+id/originalTitle_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="32dp"
+            style="@style/DetailLabel"
+            android:layout_width="0dp"
             android:text="@string/original_title_label"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/img_poster"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/user_rating_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
+            style="@style/DetailLabel"
+            android:layout_width="0dp"
             android:text="@string/user_rating_label"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/img_poster"
             app:layout_constraintTop_toBottomOf="@+id/title_tv" />
 
         <TextView
             android:id="@+id/release_date_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
+            style="@style/DetailLabel"
+            android:layout_width="0dp"
             android:text="@string/release_date_label"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/img_poster"
             app:layout_constraintTop_toBottomOf="@+id/user_rating_tv" />
 
         <TextView
             android:id="@+id/overview_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            style="@style/DetailLabel"
             android:text="@string/synopsis_label"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/img_poster" />
 
         <TextView
+            android:id="@+id/trailers_label"
+            style="@style/DetailLabel"
+            android:text="@string/trailers_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/synopsis_tv" />
+
+        <TextView
+            android:id="@+id/reviews_label"
+            style="@style/DetailLabel"
+            android:text="@string/reviews_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameVideos" />
+
+
+        <TextView
             android:id="@+id/title_tv"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="4dp"
+            style="@style/Detailtv"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/img_poster"
             app:layout_constraintTop_toBottomOf="@+id/originalTitle_label"
@@ -86,13 +80,7 @@
 
         <TextView
             android:id="@+id/user_rating_tv"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="4dp"
+            style="@style/Detailtv"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/img_poster"
             app:layout_constraintTop_toBottomOf="@+id/user_rating_label"
@@ -100,13 +88,7 @@
 
         <TextView
             android:id="@+id/release_date_tv"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="4dp"
+            style="@style/Detailtv"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/img_poster"
             app:layout_constraintTop_toBottomOf="@+id/release_date_label"
@@ -114,17 +96,101 @@
 
         <TextView
             android:id="@+id/synopsis_tv"
-            android:layout_width="0dp"
+            style="@style/Detailtv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/overview_label"
+            tools:text="muy bueno" />
+
+        <FrameLayout
+            android:id="@+id/frameVideos"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/overview_label"
-            tools:text="muy bueno" />
+            app:layout_constraintTop_toBottomOf="@+id/trailers_label">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerviewVideo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_video_movie" />
+
+            <TextView
+                android:id="@+id/data_vidio_tv"
+                style="@style/Detailtv"
+                android:layout_width="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/data_no_available"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="No data avalible" />
+
+            <ProgressBar
+                android:id="@+id/pb_loading_indicator_video"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center"
+                android:visibility="invisible" />
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reviews_label">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerviewReview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_video_movie" />
+
+            <TextView
+                android:id="@+id/data_review_tv"
+                style="@style/Detailtv"
+                android:layout_width="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/data_no_available"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="No data avalible" />
+
+            <ProgressBar
+                android:id="@+id/pb_loading_indicator_review"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center"
+                android:visibility="invisible" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/favorite_tv"
+            style="@style/DetailLabelFavorite"
+            android:layout_width="0dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:drawableBottom="@drawable/ic_favorite_border_24dp"
+            android:text="@string/make_it_your_favorite"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_poster"
+            app:layout_constraintTop_toBottomOf="@+id/release_date_tv" />
+
+
     </android.support.constraint.ConstraintLayout>
 
 </ScrollView>
